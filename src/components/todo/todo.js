@@ -3,8 +3,7 @@ import TodoForm from './form.js';
 import TodoList from './list.js';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+
 import './todo.scss';
 
 function ToDo (props){
