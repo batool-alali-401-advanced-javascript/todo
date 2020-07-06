@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/css/main.b06360a0.chunk.css",
+    "main.js": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/js/main.8b89a898.chunk.js",
+    "main.js.map": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/js/main.8b89a898.chunk.js.map",
+    "runtime-main.js": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/js/runtime-main.c23ba200.js",
+    "runtime-main.js.map": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/js/runtime-main.c23ba200.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.307b27db.chunk.js": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/js/2.307b27db.chunk.js",
+    "static/js/2.307b27db.chunk.js.map": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/js/2.307b27db.chunk.js.map",
+    "index.html": "/https://batool-alali-401-advanced-javascript.github.io/todo/index.html",
+    "precache-manifest.f34f142834392f86e9701f994360b8c1.js": "/https://batool-alali-401-advanced-javascript.github.io/todo/precache-manifest.f34f142834392f86e9701f994360b8c1.js",
+    "service-worker.js": "/https://batool-alali-401-advanced-javascript.github.io/todo/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.b06360a0.chunk.css.map": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/css/main.b06360a0.chunk.css.map",
+    "static/js/2.307b27db.chunk.js.LICENSE.txt": "/https://batool-alali-401-advanced-javascript.github.io/todo/static/js/2.307b27db.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c23ba200.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.307b27db.chunk.js",
+    "static/css/main.b06360a0.chunk.css",
+    "static/js/main.8b89a898.chunk.js"
+  ]
+}

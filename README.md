@@ -6,9 +6,9 @@
 
 ### Links and Resources
 
-- [submission PR]()
-- [netlify]()
-- [gh-page]()
+- [submission PR](https://github.com/batool-alali-401-advanced-javascript/todo/pull/3)
+- [netlify](https://todo-2020.netlify.app/)
+- [gh-page](https://batool-alali-401-advanced-javascript.github.io/todo/)
 
 ### Setup
 ` $npx i `
