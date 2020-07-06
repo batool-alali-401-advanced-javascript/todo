@@ -5,16 +5,16 @@ import React from 'react';
 function TodoList  (props) {
   
   console.log(props);
-  if (props.list.list){
+  if (props.list){
     return (
       <ul>
-        {props.list.list.map(item => (
+        {props.list.map(item => (
           <li
-            className={`complete-${item.complete.toString()}`}
+            className={`complete-${false.toString()}`}
             key={item._id}
           >
             <span onClick={() =>props.handleComplete(item._id)}>
-              {item.text}
+              {item.item}
             </span>
           </li>
         ))}

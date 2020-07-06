@@ -26,7 +26,7 @@ function TodoForm (props) {
         <Form.Group >
           <Form.Label>
             To Do Item
-            <Form.Control type="text" name="text" placeholder="Item" onChange={handleInputChange} />
+            <Form.Control type="text" name="item" placeholder="Item" onChange={handleInputChange} />
           </Form.Label>
         </Form.Group>
         <Form.Group controlId="formBasicRangeCustom">
