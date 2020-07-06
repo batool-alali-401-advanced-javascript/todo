@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import TodoForm from './form.js';
 import TodoList from './list.js';
-
+import axios from 'axios';
 import './todo.scss';
+// const axios = require('axios').default;
+
 
 const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
@@ -12,15 +14,16 @@ const ToDo = () => {
   const [list, setList] = useState([]);
 
   const _addItem = (item) => {
-    item.due = new Date();
-    fetch(todoAPI, {
+    console.log(item);
+    axios({
+      url:todoAPI,
       method: 'post',
       mode: 'cors',
       cache: 'no-cache',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(item)
+      data: JSON.stringify(item)
     })
-      .then(response => response.json())
+      .then(response => response.data)
       .then(savedItem => {
         setList([...list, savedItem])
       })
@@ -33,18 +36,19 @@ const ToDo = () => {
 
     if (item._id) {
 
-      item.complete = !item.complete;
+      item.status = !item.status;
 
       let url = `${todoAPI}/${id}`;
 
-      fetch(url, {
+      axios( {
+        url:url,
         method: 'put',
         mode: 'cors',
         cache: 'no-cache',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(item)
+        data: JSON.stringify(item)
       })
-        .then(response => response.json())
+        .then(response => response.data)
         .then(savedItem => {
           setList(list.map(listItem => listItem._id === item._id ? savedItem : listItem));
         })
@@ -53,11 +57,12 @@ const ToDo = () => {
   };
 
   const _getTodoItems = () => {
-    fetch(todoAPI, {
+    axios( {
+      url:todoAPI,
       method: 'get',
       mode: 'cors',
     })
-      .then(data => data.json())
+      .then(data => data.data)
       .then(data => setList(data.results))
       .catch(console.error);
   };
@@ -68,7 +73,7 @@ const ToDo = () => {
     <>
       <header>
         <h2>
-          There are {list.filter(item => !item.complete).length} Items To Complete
+          There are {list.filter(item => !item.status).length} Items To Complete
         </h2>
       </header>
 
