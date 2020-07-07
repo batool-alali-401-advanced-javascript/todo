@@ -6,8 +6,8 @@
 
 ### Links and Resources
 
-- [submission PR](https://github.com/batool-alali-401-advanced-javascript/todo/pull/5)
-- [netlify](https://todo-2020.netlify.app/)
+- [submission PR](https://github.com/batool-alali-401-advanced-javascript/todo/pull/8)
+- [netlify](https://to-do-v1.netlify.app/)
 
 
 ### Setup
