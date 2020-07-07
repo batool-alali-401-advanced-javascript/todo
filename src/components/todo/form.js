@@ -1,22 +1,28 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
+import useForm from '../../hooks/useForm';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+
+
 function TodoForm (props) {
 
-  const [item, setItem]=  useState([]);
+  //const [item, setItem]=  useState([]);
  
-  
-  function handleInputChange(e)  {
-    setItem({ item: {...item.item, [e.target.name]: e.target.value } });
-  };
+  const [item, handleInputChange, handleSubmit] = useForm(handleForm);
+  function handleForm(item) {
+    props.handleSubmit(item)
+  }
+  // function handleInputChange(e)  {
+  //   setItem({ item: {...item.item, [e.target.name]: e.target.value } });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    e.target.reset();
-    props.handleSubmit(item.item);
-    const item1 = {};
-    setItem({item1});
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   e.target.reset();
+  //   props.handleSubmit(item.item);
+  //   const item1 = {};
+  //   setItem({item1});
+  // };
 
   
     return (
@@ -26,7 +32,7 @@ function TodoForm (props) {
         <Form.Group >
           <Form.Label>
             To Do Item
-            <Form.Control type="text" name="item" placeholder="Item" onChange={handleInputChange} />
+            <Form.Control type="text" name="text" placeholder="Item" onChange={handleInputChange} />
           </Form.Label>
         </Form.Group>
         <Form.Group controlId="formBasicRangeCustom">
