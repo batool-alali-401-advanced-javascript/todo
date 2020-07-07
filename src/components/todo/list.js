@@ -1,21 +1,34 @@
 import React from 'react';
-
+// import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 
 function TodoList  (props) {
   
-  console.log(props);
+  console.log(props.list);
   if (props.list){
+    // let arr =props.list;
+    // arr.forEach(element => {
+    //   if (element.complete)
+    //   element.complete='complete';
+    //   else element.complete='pending';
+    // });
     return (
       <ul>
         {props.list.map(item => (
-          <li
-            className={`complete-${false.toString()}`}
+            <li
+            className={`complete-${item.complete.toString()}`}
             key={item._id}
-          >
-            <span onClick={() =>props.handleComplete(item._id)}>
-              {item.item}
+            >
+             
+            
+            <span onClick={() => props.handleComplete(item._id)}>
+            {/* <button  className='delete' onClick={() => props.handleDelete(item._id)}>X</button> */}
+            
+            <div>{item.complete.toString()} {item.assignee}</div>
+                  {item.text} difficulty: {item.difficulty }
             </span>
+            <Button variant="danger" className='delete' onClick={() => props.handleDelete(item._id)}>X</Button>
           </li>
         ))}
       </ul>
