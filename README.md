@@ -1,4 +1,4 @@
-# LAB - Class 33
+# LAB - Class 34
 
 ## Project: todo
 
@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR](https://github.com/batool-alali-401-advanced-javascript/todo/pull/11)
+- [submission PR](https://github.com/batool-alali-401-advanced-javascript/todo/pull/12)
 - [netlify](https://to-do-v3.netlify.app/)
 
 
