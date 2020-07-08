@@ -6,8 +6,8 @@
 
 ### Links and Resources
 
-- [submission PR](https://github.com/batool-alali-401-advanced-javascript/todo/pull/8)
-- [netlify](https://to-do-v1.netlify.app/)
+- [submission PR](https://github.com/batool-alali-401-advanced-javascript/todo/pull/11)
+- [netlify](https://to-do-v3.netlify.app/)
 
 
 ### Setup
@@ -18,4 +18,4 @@
 
 
 #### UML
-![UML Diagram](UML2.jpg)
+![UML Diagram](UML3.jpg)
