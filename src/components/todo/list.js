@@ -1,23 +1,20 @@
-import React from 'react';
+import React, {useContext} from 'react';
 // import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import './style.scss';
+import { ToggleContext } from '../../context/show';
+import { PaginationContext }  from '../../context/paginition'
 
 function TodoList  (props) {
-  
-  console.log(props.list);
-  if (props.list){
-    // let arr =props.list;
-    // arr.forEach(element => {
-    //   if (element.complete)
-    //   element.complete='complete';
-    //   else element.complete='pending';
-    // });
+  const toggleContext = useContext(ToggleContext);
+  const pagination = useContext(PaginationContext);
+  console.log(pagination.currentItem);
+  if (pagination.currentItem){
     return (
       <ul>
-        {props.list.map(item => (
+        {pagination.currentItem.map(item => (
             <li
-            className={`complete-${item.complete.toString()}`}
+            className={`complete-${item.complete.toString()} complete-${item.complete.toString()}-${toggleContext.status} `}
             key={item._id}
             >
              
