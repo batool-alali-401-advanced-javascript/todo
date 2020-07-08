@@ -7,6 +7,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './todo.scss';
 
+import Pagination from './pagination.js'
+import ToggleHideShow from './toggleHideShow'
+import PaginationContext from '../../context/paginition'
+import ToggleShowProvider from '../../context/show';
+import ChangeNumberOfPages from './itemPpage'
+
 
 
 const todoAPI = 'https://todo-app-server-lab32.herokuapp.com/api/v1/todo';
@@ -14,63 +20,7 @@ const todoAPI = 'https://todo-app-server-lab32.herokuapp.com/api/v1/todo';
 
 const ToDo = () => {
 
-  // const [list, setList] = useState([]);
-
-  // const _addItem = (item) => {
-  //   item.due = new Date();
-  //   // item.complete=false;
-  //   console.log(item);
-  //   axios({
-  //     url:todoAPI,
-  //     method: 'post',
-  //     mode: 'cors',
-  //     cache: 'no-cache',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     data: JSON.stringify(item)
-  //   })
-  //     .then(response => response.data)
-  //     .then(savedItem => {
-  //       setList([...list, savedItem])
-  //     })
-  //     .catch(console.error);
-  // };
-
-  // const _toggleComplete = id => {
-
-  //   let item = list.filter(i => i._id === id)[0] || {};
-
-  //   if (item._id) {
-
-  //     item.complete = !item.complete;
-
-  //     let url = `${todoAPI}/${id}`;
-
-  //     axios( {
-  //       url:url,
-  //       method: 'put',
-  //       mode: 'cors',
-  //       cache: 'no-cache',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       data: JSON.stringify(item)
-  //     })
-  //       .then(response => response.data)
-  //       .then(savedItem => {
-  //         setList(list.map(listItem => listItem._id === item._id ? savedItem : listItem));
-  //       })
-  //       .catch(console.error);
-  //   }
-  // };
-
-  // const _getTodoItems = () => {
-  //   axios( {
-  //     url:todoAPI,
-  //     method: 'get',
-  //     mode: 'cors',
-  //   })
-  //     .then(data => data.data)
-  //     .then(data => setList(data))
-  //     .catch(console.error);
-  // };
+  
   const [list , _addItem , _toggleComplete , _getTodoItems , deleteItem] = useAjax();
   // useEffect(_getTodoItems, []);
 
@@ -93,13 +43,24 @@ const ToDo = () => {
           <TodoForm handleSubmit={_addItem} />
         </div>
 
-        <div>
+        <PaginationContext list={list}>
+
+        <div className="list">
+          <ToggleShowProvider list={list}>
+          <ToggleHideShow/>
+          <ChangeNumberOfPages/>
+          
           <TodoList
-            list={list}
             handleComplete={_toggleComplete}
             handleDelete={deleteItem}
           />
+          </ToggleShowProvider>
+          <Pagination
+        totalitems={list.length}
+      />
         </div>
+
+        </PaginationContext>
       </section>
     </main>
   );
